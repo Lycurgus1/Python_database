@@ -1,10 +1,14 @@
+import os
 # Importing module for database
 # Library to help connect to database
 import pyodbc
 
 # Goal is to establish connection & read data from database to the python console
 
-INSERT LOG IN DETAILS HERE FROM SETUP.py
+server = 'databases2.spartaglobal.academy'
+database = 'Northwind'
+username = 'SA'
+password = 'Passw0rd2018'
 
 # # Specifying the ODBC driver, server name, database, etc. directly
 # # ODBC = api for connecting to microsoft applications and servers. Open database connection
