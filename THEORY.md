@@ -18,3 +18,27 @@ password = os.environ.get('db_password')
 ```python
 with pyodbc.connect(self.connection_string, timeout=20) as self.connection          
 ```
+ - Creating a cursor. This creates the cursor then returns it to the class
+ ```python
+    def create_cursor(self):
+        self.cursor = self.connection.cursor()
+        return self.cursor
+```
+- Fetchall. This fetches all rows from a SQL query
+```python
+        rows = self.cursor.fetchall()
+        for row in rows:
+            print(row)
+```
+- Fetch many. This fetches multiple role based on a specified value
+```python
+        rows = self.cursor.fetchmany(2)
+        for row in rows:
+            print(row)
+```
+- Fetch one. This fetches on row
+```python
+        rows = self.cursor.fetchone()
+        for row in rows:
+            print(row)
+```
