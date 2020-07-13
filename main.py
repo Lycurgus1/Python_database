@@ -1,13 +1,14 @@
 from OOP_databases import Database
+import os
 
 # Defining database username etc variables
-server = 'databases2.spartaglobal.academy'
-database = 'Northwind'
-username = 'SA'
-password = 'Passw0rd2018'
+server = os.environ.get('db_server')
+database = os.environ.get('db_database')
+username = os.environ.get('db_username')
+password = os.environ.get('db_password')
 
 # Creating connections string object with variables
-connection_string = ('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE=' + database +';UID='+ username +';PWD='+ password)
+connection_string = ('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
 
 
 # Calling functions

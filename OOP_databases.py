@@ -1,5 +1,8 @@
-# Importing module for database methods
+# Importing modules for database and statistic methods
+import statistics
+
 import pyodbc
+from statistics import *
 
 # Create class
 class Database:
@@ -15,8 +18,6 @@ class Database:
                 print("Connection worked")
         except:
             print("Connection timed out")
-        raise Exception as e:
-            print("You got this error", e)
         return self.connection
 
     # Create function to intialise cursor
@@ -62,9 +63,12 @@ class Database:
     # Assignment: Calculate the average unit price of all the products
     def average_price2(self):
         self.cursor.execute("SELECT AVG(UnitPrice) from Products")
-        rows = self.cursor.fetchall()
+        rows = self.cursor
+        prices = []
         for row in rows:
-            print(row)
+            prices.append(row[0])
+        output = round(statistics.mean(prices),2)
+        print("Average price is: £", output)
 
 
     def average_price(self):

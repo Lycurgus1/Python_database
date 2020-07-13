@@ -5,10 +5,10 @@ import pyodbc
 
 # Goal is to establish connection & read data from database to the python console
 
-server = 'databases2.spartaglobal.academy'
-database = 'Northwind'
-username = 'SA'
-password = 'Passw0rd2018'
+server = os.environ.get('db_server')
+database = os.environ.get('db_database')
+username = os.environ.get('db_username')
+password = os.environ.get('db_password')
 
 # # Specifying the ODBC driver, server name, database, etc. directly
 # # ODBC = api for connecting to microsoft applications and servers. Open database connection
@@ -20,7 +20,7 @@ password = 'Passw0rd2018'
 # print(cursor)
 
 # Differiantes from documentation slightly
-connection_string = ('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE=' + database +';UID='+ username +';PWD='+ password)
+connection_string = ('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
 
 # Trying to connect with database string. If not able to connect it times out in 5 seconds
 # def connection_loop(connection):
