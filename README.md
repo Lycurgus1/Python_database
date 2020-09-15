@@ -12,4 +12,4 @@ This is a collection of notes and theory regarding working with databases in pyt
 
 - These functions use the principles of dry, each one doing a specific repeatable task so it is not repeated. 
 
-- See theory.md for a break of the theory
+- See theory.md for a breakdown of the theory
